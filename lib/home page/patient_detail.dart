@@ -9,16 +9,17 @@ class PatientDetails extends StatelessWidget {
       appBar: AppBar(
         title: RichText(
           text: TextSpan(
-              style: mystyle(26,primaryColor,FontWeight.bold),
+              style: mystyle(26, primaryColor, FontWeight.bold),
               children: [
                 TextSpan(
                   text: "Doc",
                 ),
                 TextSpan(
-                    text: "Time", style: mystyle(26,secondaryColor,FontWeight.bold)
+                    text: "Time",
+                    style: mystyle(26, secondaryColor, FontWeight.bold)
                 ),
                 TextSpan(
-                  text: "+",style: mystyle(26,primaryColor,FontWeight.bold),
+                  text: "+", style: mystyle(26, primaryColor, FontWeight.bold),
                 ),
               ]
           ),
@@ -29,70 +30,125 @@ class PatientDetails extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Card(
-              shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(300)),
-              elevation: 4,
-              child: Container(
-                  height: 200,
-                  width: 200,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(image: AssetImage("assets/image/boy img1.png"), fit: BoxFit.cover),
-                  border: Border.all(color: Colors.black)
-                ),
-
-              ),
+            Column(
+              children: [
+                Text("Patient Details",
+                    style: mystyle(26, primaryColor, FontWeight.bold)),
+              ],
+            ),
+            CircleAvatar(
+              maxRadius: 90,
+              backgroundImage:AssetImage("assets/image/boy img1.png") ,
             ),
             Container(
+              margin: EdgeInsets.all(10),
               width: double.infinity,
+              height: 360,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(topRight: Radius.circular(30),topLeft: Radius.circular(30)),
+                border: Border.all(color: Colors.blue),
+                borderRadius: BorderRadius.all(Radius.circular(30)),
                 color: Colors.white,
               ),
               child: Padding(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Mr. Akash Ekka",style: mystyle(25,Colors.black,FontWeight.bold),),
-
                             Row(
                               children: [
-                                Icon(Icons.location_on,color: Colors.blue,),
-                                Text("Samtse",style: mystyle(22,Colors.black,FontWeight.bold),),
+                                Icon(Icons.person, color: Colors.blue),
+                                SizedBox(width: 10,),
+                                Text("Name: Mr.Akash Ekka", style: mystyle(
+                                    24, Colors.black, FontWeight.bold),),
                               ],
                             ),
+                            SizedBox(height: 10,),
+                            Row(
+                              children: [
+                                Icon(Icons.person, color: Colors.blue),
+                                SizedBox(width: 10,),
+                                Text("Age: 25years.", style: mystyle(
+                                    20, Colors.black, FontWeight.bold),),
+                              ],
+                            ),
+                            SizedBox(height: 10,),
+                            Row(
+                              children: [
+                                Icon(Icons.male, color: Colors.blue),
+                                SizedBox(width: 10,),
+                                Text("Gender: Male.", style: mystyle(
+                                    20, Colors.black, FontWeight.bold),),
+                              ],
+                            ),
+                            SizedBox(height: 10,),
+                            Row(
+                              children: [
+                                Icon(Icons.maps_home_work_rounded,
+                                    color: Colors.blue),
+                                SizedBox(width: 10,),
+                                Text("Address: Samtse.",
+                                  style: mystyle(20, Colors.black,FontWeight.bold),),
+                              ],
+                            ),
+                            SizedBox(height: 10,),
+                            Row(
+                              children: [
+                                Icon(Icons.phone_enabled_outlined,
+                                    color: Colors.blue),
+                                SizedBox(width: 10,),
+                                Text("Contact: 17567845", style: mystyle(
+                                    20, Colors.black, FontWeight.bold),),
+                              ],
+                            ),
+                            SizedBox(height: 10,),
+                            Row(
+                              children: [
+                                Icon(Icons.alternate_email, color: Colors.blue),
+                                SizedBox(width: 10,),
+                                Text("Email: akashekka@gmail.com.",
+                                  style: mystyle(
+                                      20, Colors.black, FontWeight.bold),),
+                              ],
+                            ),
+                            SizedBox(height: 10,),
+                            Text(
+                              "Disease: Mr.Akash is suffering from a Cardiovascular diseases affect the heart and blood vessels .",
+                              style: mystyle(
+                                  20, Colors.black, FontWeight.bold),),
+
                           ],
                         ),
+
                       ],
                     ),
-                    SizedBox(height: 10,),
-                    Text("About Patient",style: mystyle(25,primaryColor,FontWeight.bold),),
-                    Text(detail,style: mystyle(16,Colors.black,FontWeight.bold),),
-                    SizedBox(height: 4,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                      ],
-                    ),
-                    SizedBox(height: 20,),
-                    Center(
-                      child: MaterialButton(
-                        color: primaryColor,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                        height: MediaQuery.of(context).size.height*0.07,
-                        minWidth: MediaQuery.of(context).size.width*0.8,
-                        onPressed: (){},
-                        child: Text('Contact: 17567483',style: mystyle(22,Colors.white,FontWeight.bold),),
-                      ),
-                    )
+
                   ],
                 ),
+              ),
+            ),
+            SizedBox(height: 3,),
+            Container(
+              child: MaterialButton(
+                color: primaryColor,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                height: MediaQuery
+                    .of(context)
+                    .size
+                    .height * 0.05,
+                minWidth: MediaQuery
+                    .of(context)
+                    .size
+                    .width * 0.8,
+                onPressed: () {},
+                child: Text("Log Out",
+                  style: mystyle(22, Colors.white, FontWeight.bold),),
               ),
             ),
           ],
@@ -100,5 +156,4 @@ class PatientDetails extends StatelessWidget {
       ),
     );
   }
-}
-
+  }

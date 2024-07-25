@@ -4,6 +4,7 @@ import 'package:untitled4/home%20page/carousel_Slider.dart';
 import 'package:untitled4/home%20page/covidPage.dart';
 import 'package:untitled4/home%20page/doctorPage.dart';
 import 'package:untitled4/home%20page/gridViewPage.dart';
+import 'package:untitled4/home%20page/logIn.dart';
 import 'package:untitled4/home%20page/registrationForm.dart';
 import 'package:untitled4/home%20page/splash.dart';
 import 'package:untitled4/projectPage/medicalShopPage.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MedicalShop(),
+      home: Doctor(),
     );
   }
 }
